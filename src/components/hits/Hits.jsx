@@ -4,16 +4,16 @@ import s from '../../assets/img/hits img.jpg';
 
 const Hits = ({ addToCart }) => {
   const products = [
-    { id: 1, name: 'Хит 1', price: '100.000 сом', image: s, description: 'Описание товара 1' },
-    { id: 2, name: 'Хит 2', price: '150.000 сом', image: s, description: 'Описание товара 2' },
-    { id: 3, name: 'Хит 3', price: '200.000 сом', image: s, description: 'Описание товара 3' },
-    { id: 4, name: 'Хит 4', price: '250.000 сом', image: s, description: 'Описание товара 4' },
-    { id: 5, name: 'Хит 5', price: '300.000 сом', image: s, description: 'Описание товара 5' },
-    { id: 6, name: 'Хит 6', price: '350.000 сом', image: s, description: 'Описание товара 6' },
-    { id: 7, name: 'Хит 7', price: '400.000 сом', image: s, description: 'Описание товара 7' },
-    { id: 8, name: 'Хит 8', price: '450.000 сом', image: s, description: 'Описание товара 8' },
-    { id: 9, name: 'Хит 9', price: '500.000 сом', image: s, description: 'Описание товара 9' },
-    { id: 10, name: 'Хит 10', price: '550.000 сом', image: s, description: 'Описание товара 10' },
+    { id: 1, name: 'Хит 1', price: '100 сом', image: s, description: 'Описание товара 1' },
+    { id: 2, name: 'Хит 2', price: '150 сом', image: s, description: 'Описание товара 2' },
+    { id: 3, name: 'Хит 3', price: '200 сом', image: s, description: 'Описание товара 3' },
+    { id: 4, name: 'Хит 4', price: '250 сом', image: s, description: 'Описание товара 4' },
+    { id: 5, name: 'Хит 5', price: '300 сом', image: s, description: 'Описание товара 5' },
+    { id: 6, name: 'Хит 6', price: '350 сом', image: s, description: 'Описание товара 6' },
+    { id: 7, name: 'Хит 7', price: '400 сом', image: s, description: 'Описание товара 7' },
+    { id: 8, name: 'Хит 8', price: '450 сом', image: s, description: 'Описание товара 8' },
+    { id: 9, name: 'Хит 9', price: '500 сом', image: s, description: 'Описание товара 9' },
+    { id: 10, name: 'Хит 10', price: '550 сом', image: s, description: 'Описание товара 10' },
   ];
   
   return (

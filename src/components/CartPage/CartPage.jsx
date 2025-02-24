@@ -1,41 +1,51 @@
-const CartPage = ({ cartItems, removeFromCart, updateQuantity }) => {
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0); 
+import Header from "../Header/Header";
 
-  console.log('Cart items', cartItems)
-  console.log('Total price', totalPrice)
+const CartPage = ({ cartItems, removeFromCart, updateQuantity }) => {
+  const totalPrice = cartItems.reduce((acc, item) => {
+    const price = parseFloat(item.price.replace(/[^\d.-]/g, '').replace(',', '.')); 
+    const quantity = Number(item.quantity); 
+
+    if (isNaN(price) || isNaN(quantity)) {
+      console.error('Invalid price or quantity', item);
+      return acc;
+    }
+
+    return acc + price * quantity;
+  }, 0);
 
   return (
-    <div className="w-[1170px] mx-auto py-6">
-      <h2 className="text-center text-2xl mb-6">Корзина</h2>
+    <div className="max-w-screen-xl mx-auto py-8 px-4">
+      <Header/>
+      <h2 className="text-center text-3xl font-semibold mb-8">Корзина</h2>
       {cartItems.length === 0 ? (
-        <p className="text-center">Ваша корзина пуста</p>
+        <p className="text-center text-lg text-gray-600">Ваша корзина пуста</p>
       ) : (
         <div>
-          <div className="flex justify-center flex-wrap gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {cartItems.map((item) => (
-              <div key={item.id} className="w-[280px] h-[390px] p-2 mb-4 border rounded-lg shadow-lg">
-                <img className="h-[240px] w-[100%] object-cover rounded-t-lg" src={item.image} alt={item.name} />
-                <div className="p-2">
-                  <p className="font-semibold text-center">{item.name}</p>
-                  <p className="text-center">{item.price} сом</p>
-                  <p className="text-center text-gray-500">Количество: {item.quantity}</p>
-                  <div className="flex justify-center gap-2 mt-2">
+              <div key={item.id} className="bg-white shadow-md rounded-lg overflow-hidden">
+                <img className="w-full h-[240px] object-cover" src={item.image} alt={item.name} />
+                <div className="p-4">
+                  <p className="text-xl font-semibold text-center text-gray-800">{item.name}</p>
+                  <p className="text-center text-gray-600 text-lg">{item.price} сом</p>
+                  <p className="text-center text-gray-400 text-sm">Количество: {item.quantity}</p>
+                  <div className="flex justify-center gap-4 mt-3">
                     <button
                       onClick={() => updateQuantity(item.id, 'increment')}
-                      className="bg-blue-500 text-white px-2 py-1 rounded"
+                      className="w-10 h-10 bg-blue-600 text-white rounded-full text-2xl font-bold hover:bg-blue-700 transition"
                     >
                       +
                     </button>
                     <button
                       onClick={() => updateQuantity(item.id, 'decrement')}
-                      className="bg-blue-500 text-white px-2 py-1 rounded"
+                      className="w-10 h-10 bg-blue-600 text-white rounded-full text-2xl font-bold hover:bg-blue-700 transition"
                       disabled={item.quantity <= 1}
                     >
                       -
                     </button>
                   </div>
                   <button
-                    className="bg-red-500 text-white py-1 px-3 mt-2 w-full"
+                    className="mt-4 w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
                     onClick={() => removeFromCart(item.id)}
                   >
                     Удалить
@@ -44,11 +54,11 @@ const CartPage = ({ cartItems, removeFromCart, updateQuantity }) => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-4">
-            <p className="text-xl font-semibold">
+          <div className="text-center mt-8">
+            <p className="text-2xl font-semibold text-gray-800">
               Общая сумма: {totalPrice.toLocaleString()} сом
             </p>
-            <button className="bg-green-500 text-white py-2 px-4 rounded mt-4">
+            <button className="mt-6 bg-green-600 text-white py-2 px-8 rounded-lg hover:bg-green-700 transition">
               Оформить заказ
             </button>
           </div>
