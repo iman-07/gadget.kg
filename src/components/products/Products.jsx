@@ -15,5 +15,37 @@ export const products = [
       image: "/path/to/main-image2.jpg", 
       images: ["/path/to/image1.jpg", "/path/to/image2.jpg", "/path/to/image3.jpg"],
     },
+    {
+      id: 3,
+      name: "Хит 3",
+      price: "190.000 сом",
+      description: "Описание товара 3",
+      image: "/path/to/main-image3.jpg", 
+      images: ["/path/to/image1.jpg", "/path/to/image2.jpg", "/path/to/image3.jpg"],
+    },
+    {
+      id: 4,
+      name: "Хит 4",
+      price: "120.000 сом",
+      description: "Описание товара 2",
+      image: "/path/to/main-image2.jpg", 
+      images: ["/path/to/image1.jpg", "/path/to/image2.jpg", "/path/to/image3.jpg"],
+    },
+    {
+      id: 5,
+      name: "Хит 5",
+      price: "130.000 сом",
+      description: "Описание товара 2",
+      image: "/path/to/main-image2.jpg", 
+      images: ["/path/to/image1.jpg", "/path/to/image2.jpg", "/path/to/image3.jpg"],
+    },
+    {
+      id: 6,
+      name: "Хит 6",
+      price: "200.000 сом",
+      description: "Описание товара 2",
+      image: "/path/to/main-image2.jpg", 
+      images: ["/path/to/image1.jpg", "/path/to/image2.jpg", "/path/to/image3.jpg"],
+    },
   ];
   
