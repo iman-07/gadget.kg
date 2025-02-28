@@ -20,7 +20,7 @@ function AdminUsers() {
   return (
     <div className="p-8 bg-gray-100 rounded-lg shadow-lg max-w-3xl mx-auto mt-10">
       <button
-        onClick={() => navigate('/admin')}
+        onClick={() => navigate('/admin/dashboard')}
         className="absolute top-4 left-4 text-2xl text-gray-700 hover:text-gray-900"
       >
         &#8592; {/* Стрелка назад */}

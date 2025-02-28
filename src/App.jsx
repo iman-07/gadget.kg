@@ -16,6 +16,7 @@ import AdminProducts from "./admin/AdminProducts";
 import AdminOrders from "./admin/AdminOrders";
 import AdminSettings from "./admin/AdminSettings";
 import Registration from "./pages/register/Registration";
+import CheckoutPage from "./components/checkOutPage/Checkoutpage";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -97,13 +98,13 @@ function App() {
               />
             }
           />
+          <Route path="/checkout" element={<CheckoutPage />}/>
           <Route
             path="/product/:id"
             element={<ProductDetail products={products} addToCart={addToCart} />}
           />
 
-          {/* Админская панель без Header */}
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<AdminUsers />} />
           <Route path="/admin/products" element={<AdminProducts />} />
           <Route path="/admin/orders" element={<AdminOrders />} />
